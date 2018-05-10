@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
+
+body {
+ font-family: 'Slabo 27px';
+ background: url('img/20180509130224.png') no-repeat;
+ background-size: cover;
+ background-position: center;
+ height: 100%;
+}
+
+.header {
+ display: flex;
+ justify-content: space-around;
+ background: white;
+ border-bottom: solid slateblue 6px;
+}
+.header > h1 {
+ color: slateblue;
+}
+
+.nav-list {
+ display: flex;
+ flex-flow: column;
+ justify-content: space-around;
+ background: white;
+ height: 50px;
+ width: 50px;
+ border: solid slateblue 3px;
+ padding: 0px;
+ position: fixed;
+ list-style: none;
+ opacity: 0.9;
+}
+.nav-list > li {
+ height: 1px;
+ width: 20px;
+ margin: 3px;
+ margin: 0 auto;
+ border-bottom: solid 3px slateblue;
+}
+
+/* animations */
+
+.slide {
+ transform: translateX(-100px);
+ will-change: transition;
+ transition: transform 0.5s ease;
+}
+.close {
+ transform: rotate(90deg);
+ will-change: transition;
+ transition: transform 0.5s ease;
+}
+
+.open {
+ position: fixed;
+ display: flex;
+ flex-flow: column;
+ justify-content: space-around;
+ background: white;
+ height: 300px;
+ width: 100px;
+ transform: translate(-100px, 55px);
+ will-change: transition;
+ transition: transform 0.5s ease;
+ border: solid 3px slateblue;
+ opacity: 0.9;
+}
+
+/* end animations */
+
+.link {
+ list-style: none;
+ color: slateblue;
+ margin: 20px 0 20px 0;
+ font-size: 20px;
+}
+
+.menu {
+ position: fixed;
+ display: block;
+ visibility: hidden;
+}
+
+
+
+.container {
+ margin: 0 auto;
+ height: 650px;
+ width: 350px;
+ margin-bottom: 50px;
+ background: white;
+ border-bottom: solid 5px slateblue;
+}
+
+.intro {
+ background: slateblue;
+}
+.intro > h2 {
+ text-align: center;
+ color: white;
+ padding-bottom: 5px;
+}
+.intro > h3 {
+ padding-top: 10px;
+ text-align: center;
+ color: white;
+}
+
+.container > p {
+ padding: 5px 10px 5px 10px;
+ color: black;
+ font-size: 18px;
+}
