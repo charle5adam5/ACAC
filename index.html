@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><html>
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width" />
   <title>ACAC</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
  <div class='header'>
   <h1>ACAC</h1>
+  <img class='logo' src='./images/acaclogo.svg'/>
   <nav class='nav'>
    <ul class='nav-list'>
     <li class='menu-bar'></li>
@@ -16,30 +17,51 @@
    </ul>
    <div>
     <ul class='menu'>
-     <li class='link'>Home</li>
-     <li class='link'><a href='calendar.html'>Events</a></li>
-     <li class='link'>Newsletter</li>
+     <li class='link'><a href='index.html'> Home </a></li>
+     <li class='link'><a href='events.html'> Events </a></li>
+     <li class='link'><a href='news.html'> Newsletter </a></li>
+     <li class='link'><a href='photos.html'> Photos </a></li>
     </ul>
    </div>
   </nav>
  </div>
 
+<div class='wrapper'>
+<div class='parallax bg1'>
   <div class='container'>
    <div class='intro'>
     <h3> Welcome to the </h3>
     <h2> Ancient City Astronomy Club
     </h2>
    </div>
-    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac purus ac est egestas posuere in eget ipsum. Proin dapibus pretium efficitur. Phasellus metus elit, interdum faucibus lorem vel, convallis cursus ipsum. Pellentesque sed fringilla urna, sit amet ornare ante. Integer et pretium lorem, nec fringilla magna. In eget dui elementum, tristique odio eu, semper nibh. Aenean fringilla, tellus a rutrum ullamcorper, justo turpis ultrices turpis, at cursus sem dui vitae libero. Curabitur eget nunc ac enim ullamcorper interdum. Proin id libero quis quam ultricies ultrices. Suspendisse egestas elit nec elit tempor auctor. Quisque molestie, neque id ultricies accumsan, diam elit hendrerit erat, eu lacinia purus dui eget dolor. Aenean consequat leo velit, id dignissim arcu luctus id. Suspendisse ultricies erat felis, at facilisis leo accumsan id. Nulla facilisi. Nam sed facilisis urna. Suspendisse sollicitudin diam quis lorem pellentesque mollis.
-  </p>
+    <img id='club' src='./images/club.jpg' />
+    <p>The Ancient City Astronomy Club (ACAC), St. Augustine, Florida, 
+      is a friendly and outgoing community of amateur astronomy 
+      enthusiasts promoting interest in the heavens and beyond since 
+      1974. We invite anyone with an interest in astronomy, telescopes,
+      the beauty of the night sky or space sciences to join with us as 
+      we learn more. We hold monthly meetings and star parties, along 
+      with frequent field trips and public outreach events. Our members 
+      are knowledgable in many aspects of astronomy and space science 
+      and enjoy sharing our passion, knowledge and experience with all.
+      Check out our Facebook page here: 
+      <a href='www.facebook.com/acacstaugfl'>
+        <img class='icon' src='./images/facebook_icon.svg' />
+      </a>
+    </p>
+</div>
 
+
+<div id='calendar'>
+    <!-- <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=acac.staugfl%40gmail.com&amp;color=%231B887A&amp;src=l7hejdf52b6emttcb9b7qn2ass%40group.calendar.google.com&amp;color=%238D6F47&amp;src=%23contacts%40group.v.calendar.google.com&amp;color=%23B1440E&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%2329527A&amp;src=4ns9j5g8imb82tk71biihjoubo%40group.calendar.google.com&amp;color=%231B887A&amp;src=213om8jqr0bn1hpntni57m3m64%40group.calendar.google.com&amp;color=%23125A12&amp;src=vddtj74ak11m025k7c0dnt59g4%40group.calendar.google.com&amp;color=%23182C57&amp;src=b0bvva3kng0ht9eqvuc4112eqk%40group.calendar.google.com&amp;color=%236B3304&amp;ctz=America%2FNew_York" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no">
+    </iframe> -->
+
+    <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=acac.staugfl%40gmail.com&amp;color=%231B887A&amp;src=l7hejdf52b6emttcb9b7qn2ass%40group.calendar.google.com&amp;color=%238D6F47&amp;src=%23contacts%40group.v.calendar.google.com&amp;color=%23B1440E&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%2329527A&amp;src=4ns9j5g8imb82tk71biihjoubo%40group.calendar.google.com&amp;color=%231B887A&amp;src=213om8jqr0bn1hpntni57m3m64%40group.calendar.google.com&amp;color=%23125A12&amp;src=vddtj74ak11m025k7c0dnt59g4%40group.calendar.google.com&amp;color=%23182C57&amp;src=b0bvva3kng0ht9eqvuc4112eqk%40group.calendar.google.com&amp;color=%236B3304&amp;ctz=America%2FNew_York" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no">
+    </iframe>
+</div>
   </div>
-
- <div class='container'>
-
- </div>
-  
-
-  <script src="script.js"></script>
+</div>
+ 
+  <script src='script.js'></script>
 </body>
 </html>
