@@ -19,6 +19,7 @@ body {
     margin: 0 auto;
     height: 50%;
     width: 80%;
+    max-width: 640px;
     margin-bottom: 50px;
     background: white;
     border-bottom: solid 5px steelblue;
@@ -48,28 +49,31 @@ body {
   background-position: center;
 }
 
-@media screen and (max-width: 600px) {
-    .parallax:after {
-        content: " ";
-        position: relative;
-    }
-}
 
 .header {
- display: flex;
  position:fixed;
  top: 0;
  left: 0;
  right: 0;
- justify-content: space-around;
  background: white;
  border-bottom: solid steelblue 6px;
  padding-left: 10%;
  padding-right: 10%;
  z-index: 1;
 }
-.header > h1 {
- color: steelblue;
+.header-box {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    max-width: 900px;
+}
+.header-box h1 {
+    color: steelblue;
+}
+
+.footer {
+    height: 500px;
+    width: 100%;
 }
 
 .nav-list {
@@ -285,3 +289,30 @@ body {
 }
 
 /* end events */
+
+/* Members */
+#signin-box {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    background: steelblue;
+    padding: 2%;
+}
+#signin-box > p {
+    align-self: center;
+}
+#signin-box > input {
+    align-self: center;
+}
+#submit-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    justify-items: center;
+}
+#submit-box > input {
+    grid-row: 2;
+    width: 100px;
+    margin: 5%;
+    font-size: 1em;
+}

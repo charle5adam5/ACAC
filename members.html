@@ -1,0 +1,113 @@
+<!DOCTYPE html><html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width" />
+  <title>ACAC</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+ <div class='header'>
+        <div class='header-box'>
+  <h1>ACAC</h1>
+  <img class='logo' src='./images/acaclogo.svg'/>
+  <nav class='nav'>
+   <ul class='nav-list'>
+    <li class='menu-bar'></li>
+    <li class='menu-bar'></li>
+    <li class='menu-bar'></li>
+   </ul>
+   <div>
+    <ul class='menu'>
+     <li class='link'><a href='index.html'> Home </a></li>
+     <li class='link'><a href='events.html'> Events </a></li>
+     <li class='link'><a href='news.html'> Newsletter </a></li>
+     <li class='link'><a href='members.html'> Members </a></li>
+     <li class='link'><a href='photos.html'> Photos </a></li>
+    </ul>
+   </div>
+  </nav>
+  </div>
+ </div>
+
+ <div class='wrapper'>
+    <div class='parallax bg1'>
+ <div class='container login-box'>
+  <div class='intro'>
+    <h3> Login </h3>
+  </div>
+    <div id='signin-box' >
+        <p> Username </p>
+            <input id='usrname' type='text' placeholder='Username' />
+        <p> Password </p>
+            <input id='usrpassword' type='password' placeholder='Password' />
+    </div>
+    <div id='submit-box'>
+            <input id='usrlogin' type='submit' value='Login' />
+            <input id='usrlogout' type='submit' value='Sign Out' />
+    </div>
+
+    </div>
+  </div>
+</div>
+  
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyB4ttpYz8LoVuTz5vTIXt8841vBB36FNkc",
+    authDomain: "acac-8b160.firebaseapp.com",
+    databaseURL: "https://acac-8b160.firebaseio.com",
+    projectId: "acac-8b160",
+    storageBucket: "acac-8b160.appspot.com",
+    messagingSenderId: "763461443860"
+  };
+  firebase.initializeApp(config);
+    // FIREBASE CODE    
+  const database = firebase.database();
+  const auth  = firebase.auth();
+  database.ref('/').on('value', () => {
+      console.log('data changed');
+  })
+
+  let usrName = document.querySelector('#usrname');
+  let usrPassword = document.querySelector('#usrpassword');
+  const usrLogin = document.querySelector('#usrlogin');
+  const usrLogout = document.querySelector('#usrlogout');
+  let loginBox = document.querySelector('.login-box');
+
+usrLogin.addEventListener('click', e => {
+    const email = usrName.value;
+    const pass = usrPassword.value;
+    const promise = auth.signInWithEmailAndPassword(email, pass);
+    promise.catch(e => console.log(e.message));
+    usrName.value = '';
+    usrPassword.value = '';
+    loginBox.style.display = 'none';
+})
+
+// <!-- creating a session -->
+
+//     firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+//     .then(function() {
+//   // Existing and future Auth states are now persisted in the current
+//   // session only. Closing the window would clear any existing state even if
+//   // a user forgets to sign out.
+// });
+
+usrLogout.addEventListener('click', e => { 
+        const promise = auth.signOut();
+        promise.catch(e => console.log(e.message));
+    })
+
+auth.onAuthStateChanged(firebaseUser => {
+    if(firebaseUser) {
+            console.log(firebaseUser.email);
+    } else {
+        console.log(firebaseUser);
+    }
+})
+    // END FIREBASE CODE
+</script>
+  <script src="script.js"></script>
+</body>
+</html>

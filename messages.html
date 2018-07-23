@@ -1,0 +1,104 @@
+<!DOCTYPE html><html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width" />
+  <title>Ancient City Astronomy Club</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+ <div class='header'>
+   <div class='header-box'>
+      <h1>ACAC</h1>
+  <img class='logo' src='./images/acaclogo.svg'/>
+  <nav class='nav'>
+   <ul class='nav-list'>
+    <li class='menu-bar'></li>
+    <li class='menu-bar'></li>
+    <li class='menu-bar'></li>
+   </ul>
+   <div>
+    <ul class='menu'>
+     <li class='link'><a href='index.html'> Home </a></li>
+     <li class='link'><a href='events.html'> Events </a></li>
+     <li class='link'><a href='news.html'> Newsletter </a></li>
+     <li class='link'><a href='members.html'> Members </a></li>
+     <li class='link'><a href='photos.html'> Photos </a></li>
+    </ul>
+   </div>
+  </nav>
+   </div>
+ </div>
+
+ <div class='wrapper'>
+        <div class='parallax bg1'>
+     <div class='container'>
+      <div class='intro'>
+        <h3> Message Board </h3>
+       </div>
+       <div class='topic-create'>
+            <input type='text' placeholder='New topic' />
+            <input type='submit' />
+        </div>
+        <input class='usrlogout' type='submit' value='Sign Out' />
+      </div>
+    </div>
+</div>
+
+
+    <div class='messages'>
+
+    </div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyB4ttpYz8LoVuTz5vTIXt8841vBB36FNkc",
+        authDomain: "acac-8b160.firebaseapp.com",
+        databaseURL: "https://acac-8b160.firebaseio.com",
+        projectId: "acac-8b160",
+        storageBucket: "acac-8b160.appspot.com",
+        messagingSenderId: "763461443860"
+      };
+      firebase.initializeApp(config);
+        // FIREBASE CODE    
+      const database = firebase.database();
+      const auth  = firebase.auth();
+      database.ref('/').on('value', () => {
+          console.log('data changed');
+      })
+
+   
+      const usrLogout = document.querySelector('#usrlogout');
+    
+    usrLogout.addEventListener('click', e => { 
+        const promise = auth.signOut();
+       
+        promise.catch(e => console.log(e.message));
+        console.log(firebaseUser);
+    })
+    
+    auth.onAuthStateChanged(user => {
+        if(user) {
+              console.log(user);
+        } else {
+            console.log("Error on logout");
+        }
+    })
+
+
+//     firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+//     .then(function() {
+//   // Existing and future Auth states are now persisted in the current
+//   // session only. Closing the window would clear any existing state even if
+//   // a user forgets to sign out.
+// });
+        // END FIREBASE CODE
+    </script>
+      <script src="script.js"></script>
+    </body>
+    </html>
+ <script src='script.js'></script>
+</body>
+</html>
